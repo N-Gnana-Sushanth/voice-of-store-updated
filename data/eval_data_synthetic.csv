@@ -1,0 +1,94 @@
+id,store_id,timestamp,channel,text,issue_type,severity,actionable,ground_truth_escalated,actual_incident_start,is_planted,data_source
+EVAL-0001,ST-102,2026-10-10T10:00:00+00:00,staff_note,Observed allergen in store during afternoon visit.,allergen_label,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0002,ST-103,2026-10-10T12:00:00+00:00,online_review,Observed allergy in store during afternoon visit.,allergen_label,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0003,ST-104,2026-10-10T14:00:00+00:00,staff_note,Observed wrong label in store during afternoon visit.,allergen_label,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0004,ST-208,2026-10-10T16:00:00+00:00,online_review,Observed food poisoning in store during afternoon visit.,food_safety,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0005,ST-116,2026-10-10T18:00:00+00:00,staff_note,Observed contaminated in store during afternoon visit.,food_safety,Critical,1,1,2026-10-08T18:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0006,ST-305,2026-10-10T20:00:00+00:00,online_review,Observed foreign object in store during afternoon visit.,food_safety,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0007,ST-091,2026-10-10T22:00:00+00:00,staff_note,Observed dirty in store during afternoon visit.,hygiene,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0008,ST-101,2026-10-11T00:00:00+00:00,online_review,Observed unhygienic in store during afternoon visit.,hygiene,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0009,ST-102,2026-10-11T02:00:00+00:00,staff_note,Observed pest in store during afternoon visit.,hygiene,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0010,ST-103,2026-10-11T04:00:00+00:00,online_review,Observed freezer in store during afternoon visit.,freezer_failure,High,1,0,2026-10-09T04:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0011,ST-104,2026-10-11T06:00:00+00:00,staff_note,Observed fridge not cold in store during afternoon visit.,freezer_failure,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0012,ST-208,2026-10-11T08:00:00+00:00,online_review,Observed refrigerator in store during afternoon visit.,freezer_failure,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0013,ST-116,2026-10-11T10:00:00+00:00,staff_note,Observed spill in store during afternoon visit.,spill_hazard,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0014,ST-305,2026-10-11T12:00:00+00:00,online_review,Observed wet floor in store during afternoon visit.,spill_hazard,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0015,ST-091,2026-10-11T14:00:00+00:00,staff_note,Observed slippery in store during afternoon visit.,spill_hazard,High,1,1,2026-10-09T14:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0016,ST-101,2026-10-11T16:00:00+00:00,online_review,Observed messy aisle in store during afternoon visit.,store_cleanliness,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0017,ST-102,2026-10-11T18:00:00+00:00,staff_note,Observed trash overflowing in store during afternoon visit.,store_cleanliness,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0018,ST-103,2026-10-11T20:00:00+00:00,online_review,Observed dusty shelves in store during afternoon visit.,store_cleanliness,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0019,ST-104,2026-10-11T22:00:00+00:00,staff_note,Observed restroom in store during afternoon visit.,restroom_maintenance,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0020,ST-208,2026-10-12T00:00:00+00:00,online_review,Observed toilet in store during afternoon visit.,restroom_maintenance,Medium,1,0,2026-10-10T00:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0021,ST-116,2026-10-12T02:00:00+00:00,staff_note,Observed washroom in store during afternoon visit.,restroom_maintenance,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0022,ST-305,2026-10-12T04:00:00+00:00,online_review,Observed long queue in store during afternoon visit.,queue_management,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0023,ST-091,2026-10-12T06:00:00+00:00,staff_note,Observed line too long in store during afternoon visit.,queue_management,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0024,ST-101,2026-10-12T08:00:00+00:00,online_review,Observed wait time in store during afternoon visit.,queue_management,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0025,ST-102,2026-10-12T10:00:00+00:00,staff_note,Observed ac not working in store during afternoon visit.,ac_temperature,Medium,1,0,2026-10-10T10:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0026,ST-103,2026-10-12T12:00:00+00:00,online_review,Observed too hot in store in store during afternoon visit.,ac_temperature,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0027,ST-104,2026-10-12T14:00:00+00:00,staff_note,Observed air conditioning broken in store during afternoon visit.,ac_temperature,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0028,ST-208,2026-10-12T16:00:00+00:00,online_review,Observed no carts in store during afternoon visit.,cart_basket_availability,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0029,ST-116,2026-10-12T18:00:00+00:00,staff_note,Observed no baskets in store during afternoon visit.,cart_basket_availability,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0030,ST-305,2026-10-12T20:00:00+00:00,online_review,Observed broken trolley in store during afternoon visit.,cart_basket_availability,Low,1,0,2026-10-10T20:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0031,ST-091,2026-10-12T22:00:00+00:00,staff_note,Observed out of stock in store during afternoon visit.,stockout,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0032,ST-101,2026-10-13T00:00:00+00:00,online_review,Observed stockout in store during afternoon visit.,stockout,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0033,ST-102,2026-10-13T02:00:00+00:00,staff_note,Observed not available in store during afternoon visit.,stockout,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0034,ST-103,2026-10-13T04:00:00+00:00,online_review,Observed rotten vegetables in store during afternoon visit.,fresh_produce_spoilage,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0035,ST-104,2026-10-13T06:00:00+00:00,staff_note,Observed spoiled fruit in store during afternoon visit.,fresh_produce_spoilage,High,1,1,2026-10-11T06:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0036,ST-208,2026-10-13T08:00:00+00:00,online_review,Observed moldy tomato in store during afternoon visit.,fresh_produce_spoilage,High,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0037,ST-116,2026-10-13T10:00:00+00:00,staff_note,Observed damaged box in store during afternoon visit.,damaged_packaging,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0038,ST-305,2026-10-13T12:00:00+00:00,online_review,Observed dented can in store during afternoon visit.,damaged_packaging,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0039,ST-091,2026-10-13T14:00:00+00:00,staff_note,Observed torn package in store during afternoon visit.,damaged_packaging,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0040,ST-101,2026-10-13T16:00:00+00:00,online_review,Observed expired in store during afternoon visit.,expired_stock_on_shelf,Critical,1,1,2026-10-11T16:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0041,ST-102,2026-10-13T18:00:00+00:00,staff_note,Observed past expiry in store during afternoon visit.,expired_stock_on_shelf,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0042,ST-103,2026-10-13T20:00:00+00:00,online_review,Observed expiry date passed in store during afternoon visit.,expired_stock_on_shelf,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0043,ST-104,2026-10-13T22:00:00+00:00,staff_note,Observed truck delayed in store during afternoon visit.,warehouse_delay,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0044,ST-208,2026-10-14T00:00:00+00:00,online_review,Observed delivery late in store during afternoon visit.,warehouse_delay,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0045,ST-116,2026-10-14T02:00:00+00:00,staff_note,Observed shipment delayed in store during afternoon visit.,warehouse_delay,Medium,1,0,2026-10-12T02:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0046,ST-305,2026-10-14T04:00:00+00:00,online_review,Observed system shows stock but empty in store during afternoon visit.,inaccurate_inventory_count,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0047,ST-091,2026-10-14T06:00:00+00:00,staff_note,Observed inventory count mismatch in store during afternoon visit.,inaccurate_inventory_count,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0048,ST-101,2026-10-14T08:00:00+00:00,online_review,Observed stock count wrong in store during afternoon visit.,inaccurate_inventory_count,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0049,ST-102,2026-10-14T10:00:00+00:00,staff_note,Observed wrong price in store during afternoon visit.,pricing,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0050,ST-103,2026-10-14T12:00:00+00:00,online_review,Observed price mismatch in store during afternoon visit.,pricing,Medium,1,0,2026-10-12T12:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0051,ST-104,2026-10-14T14:00:00+00:00,staff_note,Observed price tag in store during afternoon visit.,pricing,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0052,ST-208,2026-10-14T16:00:00+00:00,online_review,Observed no price tag in store during afternoon visit.,missing_price_tag,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0053,ST-116,2026-10-14T18:00:00+00:00,staff_note,Observed missing price in store during afternoon visit.,missing_price_tag,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0054,ST-305,2026-10-14T20:00:00+00:00,online_review,Observed how much is this in store during afternoon visit.,missing_price_tag,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0055,ST-091,2026-10-14T22:00:00+00:00,staff_note,Observed discount missing in store during afternoon visit.,promo_discount_not_applied,Medium,1,0,2026-10-12T22:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0056,ST-101,2026-10-15T00:00:00+00:00,online_review,Observed promo not applied in store during afternoon visit.,promo_discount_not_applied,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0057,ST-102,2026-10-15T02:00:00+00:00,staff_note,Observed buy 1 get 1 not working in store during afternoon visit.,promo_discount_not_applied,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0058,ST-103,2026-10-15T04:00:00+00:00,online_review,Observed fake discount in store during afternoon visit.,misleading_offer,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0059,ST-104,2026-10-15T06:00:00+00:00,staff_note,Observed misleading offer in store during afternoon visit.,misleading_offer,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0060,ST-208,2026-10-15T08:00:00+00:00,online_review,Observed false advertisement in store during afternoon visit.,misleading_offer,Medium,1,0,2026-10-13T08:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0061,ST-116,2026-10-15T10:00:00+00:00,staff_note,Observed poor quality product in store during afternoon visit.,product_quality_dissatisfaction,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0062,ST-305,2026-10-15T12:00:00+00:00,online_review,Observed brand changed taste in store during afternoon visit.,product_quality_dissatisfaction,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0063,ST-091,2026-10-15T14:00:00+00:00,staff_note,Observed inferior quality in store during afternoon visit.,product_quality_dissatisfaction,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0064,ST-101,2026-10-15T16:00:00+00:00,online_review,Observed payment failed in store during afternoon visit.,payment_failure,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0065,ST-102,2026-10-15T18:00:00+00:00,staff_note,Observed upi failed in store during afternoon visit.,payment_failure,High,1,0,2026-10-13T18:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0066,ST-103,2026-10-15T20:00:00+00:00,online_review,Observed card declined in store during afternoon visit.,payment_failure,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0067,ST-104,2026-10-15T22:00:00+00:00,staff_note,Observed overcharged in store during afternoon visit.,billing,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0068,ST-208,2026-10-16T00:00:00+00:00,online_review,Observed wrong bill in store during afternoon visit.,billing,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0069,ST-116,2026-10-16T02:00:00+00:00,staff_note,Observed billing error in store during afternoon visit.,billing,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0070,ST-305,2026-10-16T04:00:00+00:00,online_review,Observed self-checkout in store during afternoon visit.,self_checkout_kiosk_down,High,1,0,2026-10-14T04:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0071,ST-091,2026-10-16T06:00:00+00:00,staff_note,Observed sco machine stuck in store during afternoon visit.,self_checkout_kiosk_down,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0072,ST-101,2026-10-16T08:00:00+00:00,online_review,Observed kiosk frozen in store during afternoon visit.,self_checkout_kiosk_down,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0073,ST-102,2026-10-16T10:00:00+00:00,staff_note,Observed mobile app in store during afternoon visit.,app_ordering_bug,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0074,ST-103,2026-10-16T12:00:00+00:00,online_review,Observed app order in store during afternoon visit.,app_ordering_bug,High,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0075,ST-104,2026-10-16T14:00:00+00:00,staff_note,Observed order not showing in store during afternoon visit.,app_ordering_bug,High,1,0,2026-10-14T14:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0076,ST-208,2026-10-16T16:00:00+00:00,online_review,Observed no wifi in store during afternoon visit.,wifi_network_outage,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0077,ST-116,2026-10-16T18:00:00+00:00,staff_note,Observed store wifi not working in store during afternoon visit.,wifi_network_outage,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0078,ST-305,2026-10-16T20:00:00+00:00,online_review,Observed guest internet down in store during afternoon visit.,wifi_network_outage,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0079,ST-091,2026-10-16T22:00:00+00:00,staff_note,Observed harassment in store during afternoon visit.,staff_misconduct,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0080,ST-101,2026-10-17T00:00:00+00:00,online_review,Observed abusive staff in store during afternoon visit.,staff_misconduct,Critical,1,1,2026-10-15T00:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0081,ST-102,2026-10-17T02:00:00+00:00,staff_note,Observed staff threatened in store during afternoon visit.,staff_misconduct,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0082,ST-103,2026-10-17T04:00:00+00:00,online_review,Observed staff unhelpful in store during afternoon visit.,staff_unhelpfulness,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0083,ST-104,2026-10-17T06:00:00+00:00,staff_note,Observed ignored by staff in store during afternoon visit.,staff_unhelpfulness,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0084,ST-208,2026-10-17T08:00:00+00:00,online_review,Observed no one helped me in store during afternoon visit.,staff_unhelpfulness,Low,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0085,ST-116,2026-10-17T10:00:00+00:00,staff_note,Observed need more cashiers in store during afternoon visit.,billing_clerk_shortage,Medium,1,0,2026-10-15T10:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0086,ST-305,2026-10-17T12:00:00+00:00,online_review,Observed short staffed in store during afternoon visit.,billing_clerk_shortage,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0087,ST-091,2026-10-17T14:00:00+00:00,staff_note,Observed cashier missing in store during afternoon visit.,billing_clerk_shortage,Medium,1,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0088,ST-101,2026-10-17T16:00:00+00:00,online_review,Observed fire exit blocked in store during afternoon visit.,health_safety_violation,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0089,ST-102,2026-10-17T18:00:00+00:00,staff_note,Observed unsafe workplace in store during afternoon visit.,health_safety_violation,Critical,1,1,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0090,ST-103,2026-10-17T20:00:00+00:00,online_review,Observed no safety gear in store during afternoon visit.,health_safety_violation,Critical,1,1,2026-10-15T20:00:00+00:00,1,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0091,ST-104,2026-10-17T22:00:00+00:00,staff_note,Observed good store in store during afternoon visit.,other,Low,0,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0092,ST-208,2026-10-18T00:00:00+00:00,online_review,Observed nice experience in store during afternoon visit.,other,Low,0,0,,0,SYNTHETIC_DEVELOPMENT_ONLY
+EVAL-0093,ST-116,2026-10-18T02:00:00+00:00,staff_note,Observed music loud in store during afternoon visit.,other,Low,0,0,,0,SYNTHETIC_DEVELOPMENT_ONLY

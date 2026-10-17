@@ -1,0 +1,85 @@
+{
+  "record_count": 62,
+  "evaluated_at": "2026-10-16T15:32:36.337635+00:00",
+  "random_seed": 42,
+  "metrics": {
+    "issue_type": {
+      "accuracy": 0.7419,
+      "macro_f1": 0.4365,
+      "weighted_f1": 0.7989,
+      "evaluated_samples": 62,
+      "per_class": {
+        "allergen_label": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "billing": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571,
+          "support": 4
+        },
+        "food_safety": {
+          "precision": 0.7143,
+          "recall": 0.8333,
+          "f1": 0.7692,
+          "support": 6
+        },
+        "freezer_failure": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571,
+          "support": 8
+        },
+        "hygiene": {
+          "precision": 1.0,
+          "recall": 0.8333,
+          "f1": 0.9091,
+          "support": 6
+        },
+        "other": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "payment_failure": {
+          "precision": 1.0,
+          "recall": 0.5556,
+          "f1": 0.7143,
+          "support": 9
+        },
+        "pricing": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75,
+          "support": 5
+        },
+        "staff_misconduct": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        },
+        "stockout": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 8
+        }
+      }
+    },
+    "severity": {
+      "accuracy": 0.5161,
+      "macro_f1": 0.4258,
+      "evaluated_samples": 62
+    },
+    "actionable": "N/A (ground truth actionable labels not provided)"
+  },
+  "escalation_metrics": "N/A (ground truth escalation labels not provided in dataset)",
+  "planted_incidents": "N/A (planted incident start dates not present in dataset)",
+  "dataset_path": "demo_data.csv",
+  "dataset_type": "SYNTHETIC / DEVELOPMENT DATA"
+}

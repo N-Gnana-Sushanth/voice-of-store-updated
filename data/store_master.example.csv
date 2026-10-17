@@ -1,0 +1,16 @@
+store_id,store_name,region,city,address,latitude,longitude,manager_name,phone
+ST-104,Lincoln Park Supercenter,Midwest Region,"Chicago, IL","1420 N Michigan Ave, Chicago, IL 60611",41.9022,-87.6248,Marcus Vance,+1 (312) 555-0104
+ST-208,Midtown Manhattan Market,Northeast Region,"New York, NY","580 5th Ave, New York, NY 10036",40.757,-73.978,Dr. Elena Rostova,+1 (212) 555-0208
+ST-116,Westside Commerce Hub,West Region,"Los Angeles, CA","1024 Wilshire Blvd, Los Angeles, CA 90017",34.0512,-118.2611,Raj Patel,+1 (213) 555-0116
+ST-305,Downtown Austin Express,South Region,"Austin, TX","600 Congress Ave, Austin, TX 78701",30.2685,-97.7428,Priya Sharma,+1 (512) 555-0305
+ST-091,Suburban Plaza,Pacific Northwest Region,"Seattle, WA",,,,Sarah Jenkins,+1 (206) 555-0091
+ST-001,Back Bay Central,Northeast Region,"Boston, MA","700 Boylston St, Boston, MA 02116",42.3496,-71.0825,Arthur Pendelton,+1 (617) 555-0101
+ST-002,Uptown Galleria,South Region,"Dallas, TX","13350 Dallas Pkwy, Dallas, TX 75240",32.9304,-96.8197,Carlos Mendez,+1 (214) 555-0102
+ST-003,Buckhead Plaza,Southeast Region,"Atlanta, GA","3393 Peachtree Rd NE, Atlanta, GA 30326",33.8488,-84.3621,Jessica Williams,+1 (404) 555-0103
+ST-004,Market Street Metro,West Region,"San Francisco, CA","865 Market St, San Francisco, CA 94103",37.7844,-122.4068,Kevin Zhang,+1 (415) 555-0104
+ST-005,Brickell Avenue Market,Southeast Region,"Miami, FL","701 Brickell Ave, Miami, FL 33131",25.7667,-80.1908,Lucia Diaz,+1 (305) 555-0105
+ST-006,Cherry Creek Center,Mountain Region,"Denver, CO","3000 E 1st Ave, Denver, CO 80206",39.717,-104.9536,Brian O'Connor,+1 (303) 555-0106
+ST-007,Pike Place Annex,Pacific Northwest Region,"Seattle, WA","1501 Pike Pl, Seattle, WA 98101",47.6097,-122.3422,Hannah Larson,+1 (206) 555-0107
+ST-008,Rittenhouse Square,Northeast Region,"Philadelphia, PA","1800 Walnut St, Philadelphia, PA 19103",39.9501,-75.1706,Daniel Goldberg,+1 (215) 555-0108
+ST-009,Camelback Corridor,Southwest Region,"Phoenix, AZ","2502 E Camelback Rd, Phoenix, AZ 85016",33.5092,-112.0289,Sandra Morales,+1 (602) 555-0109
+ST-010,North Loop Market,Midwest Region,"Minneapolis, MN","219 N 2nd St, Minneapolis, MN 55401",44.985,-93.272,Erik Lindgren,+1 (612) 555-0110

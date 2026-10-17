@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voice of Store · FIRST SIGNAL AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2.2">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">V</span>
+      <div>
+        <b>Voice of Store</b>
+        <small>FIRST SIGNAL AI · R5 Engine</small>
+      </div>
+    </div>
+    <nav aria-label="Main Navigation">
+      <button class="nav active" data-page="overview">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Overview</span>
+      </button>
+      <button class="nav" data-page="signals">
+        <span class="nav-icon">⚡</span>
+        <span class="nav-label">FIRST SIGNAL</span>
+      </button>
+      <button class="nav" data-page="feedback">
+        <span class="nav-icon">💬</span>
+        <span class="nav-label">All Feedback</span>
+      </button>
+      <button class="nav" data-page="actions">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-label">Action Tracker</span>
+      </button>
+      <button class="nav" data-page="reports">
+        <span class="nav-icon">📑</span>
+        <span class="nav-label">Weekly Reports</span>
+      </button>
+    </nav>
+    <div class="sidebar-note">
+      <b>Evidence first.</b>
+      <p>Signals are AI-assisted leads to investigate with store teams, not proof of an incident until verified.</p>
+    </div>
+  </aside>
+
+  <main>
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span class="crumb-root">Store Operations</span>
+          <span class="crumb-sep">/</span>
+          <span class="crumb-sub">FIRST SIGNAL AI</span>
+          <span class="crumb-sep">/</span>
+          <span class="crumb-active" id="header-breadcrumb-current">Overview</span>
+        </nav>
+        <h1 id="page-title">Overview</h1>
+        <p class="muted header-subtitle">Turn store feedback into clear, evidence-backed operational next actions.</p>
+      </div>
+      <div class="header-controls">
+        <div class="system-status" title="Intelligence engine status">
+          <span class="status-dot"></span>
+          <span class="status-text">Engine Online</span>
+        </div>
+        <button class="quiet refresh-btn" id="refresh-dashboard" title="Refresh current view and metrics">
+          <span class="btn-icon">↻</span> Refresh
+        </button>
+        <button class="primary" id="open-ingest">
+          <span class="btn-icon">＋</span> Add feedback
+        </button>
+      </div>
+    </header>
+
+    <!-- Overview Page -->
+    <section id="overview" class="page visible">
+      <div class="stats">
+        <article class="stat" id="card-feedback">
+          <div class="stat-meta">
+            <span class="stat-label">Feedback records</span>
+            <span class="stat-badge info">Ingested</span>
+          </div>
+          <strong id="feedback-count">—</strong>
+          <span class="stat-hint muted">Customer, staff & partner feedback</span>
+        </article>
+        <article class="stat" id="card-open">
+          <div class="stat-meta">
+            <span class="stat-label">Open incidents</span>
+            <span class="stat-badge warning">In workflow</span>
+          </div>
+          <strong id="open-count">—</strong>
+          <span class="stat-hint muted">Awaiting review or in progress</span>
+        </article>
+        <article class="stat alert" id="card-high">
+          <div class="stat-meta">
+            <span class="stat-label">High priority</span>
+            <span class="stat-badge alert">Immediate</span>
+          </div>
+          <strong id="high-count">—</strong>
+          <span class="stat-hint muted">Safety, recurring & high severity</span>
+        </article>
+      </div>
+
+      <div class="section-head">
+        <div>
+          <h2>Needs attention now</h2>
+          <p class="muted">Prioritized by severity, sudden acceleration, and recent evidence.</p>
+        </div>
+        <button class="quiet" data-goto="signals">View all signals →</button>
+      </div>
+      <div id="overview-incidents" class="incident-list">
+        <div class="loading-state">Loading urgent incidents...</div>
+      </div>
+    </section>
+
+    <!-- FIRST SIGNAL Page -->
+    <section id="signals" class="page">
+      <div class="section-head">
+        <div>
+          <h2>FIRST SIGNAL</h2>
+          <p class="muted">Evidence-linked early warnings and high-risk operational anomalies.</p>
+        </div>
+        <div class="toolbar">
+          <label class="sort-label">Sort by
+            <select id="signal-sort" aria-label="Sort signals by">
+              <option value="high">High → Low Severity</option>
+              <option value="low">Low → High Severity</option>
+              <option value="evidence">Most Evidence</option>
+              <option value="newest">Most Recent</option>
+            </select>
+          </label>
+          <button class="quiet" id="refresh-signals">Refresh detection</button>
+        </div>
+      </div>
+      <div class="incident-filters">
+        <input id="signal-search" placeholder="Search issue, store, owner, summary…" aria-label="Search signals">
+        <select id="signal-severity" aria-label="Filter by severity">
+          <option value="">All severities</option>
+          <option value="High">High priority</option>
+          <option value="Medium">Medium priority</option>
+          <option value="Low">Low priority</option>
+        </select>
+        <select id="signal-status" aria-label="Filter by status">
+          <option value="">All statuses</option>
+          <option>Detected — awaiting review</option>
+          <option>Under investigation</option>
+          <option>Confirmed</option>
+          <option>Inconclusive</option>
+          <option>Not substantiated</option>
+          <option>Action in progress</option>
+          <option>Pending verification</option>
+          <option>Resolved</option>
+        </select>
+      </div>
+      <div class="notice">
+        <strong>⚡ First Signal Protocol:</strong> A signal is an AI-assisted lead. Review the original verbatim feedback before confirming an incident. Safety-related reports are surfaced immediately even at low volume.
+      </div>
+      <div id="signal-list" class="incident-list"></div>
+    </section>
+
+    <!-- All Feedback Page -->
+    <section id="feedback" class="page">
+      <div class="section-head">
+        <div>
+          <h2>All Feedback Records</h2>
+          <p class="muted">Search verbatim customer and employee feedback across all channels.</p>
+        </div>
+      </div>
+      <div class="filters">
+        <input id="feedback-search" placeholder="Search verbatim text or feedback ID…">
+        <input id="store-filter" placeholder="Filter by Store ID (e.g. STORE-001)">
+        <select id="issue-filter" aria-label="Filter by issue type">
+          <option value="">All issue types</option>
+        </select>
+        <button class="primary" id="search-feedback">Search feedback</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Store</th>
+              <th>Channel</th>
+              <th>Issue Type</th>
+              <th>Severity</th>
+              <th>Verbatim Feedback & Evidence</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="feedback-rows">
+            <tr><td colspan="7" class="muted" style="text-align:center;padding:24px;">Loading feedback records...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Action Tracker Page -->
+    <section id="actions" class="page">
+      <div class="section-head">
+        <div>
+          <h2>Action Tracker</h2>
+          <p class="muted">Assign department owners, track investigations, and document verified resolutions.</p>
+        </div>
+        <label class="sort-label">Sort by
+          <select id="action-sort" aria-label="Sort actions by">
+            <option value="high">High → Low Severity</option>
+            <option value="low">Low → High Severity</option>
+            <option value="evidence">Most Evidence</option>
+            <option value="newest">Most Recent</option>
+          </select>
+        </label>
+      </div>
+      <div class="incident-filters">
+        <input id="action-search" placeholder="Search issue, store, owner, summary…" aria-label="Search actions">
+        <select id="action-severity" aria-label="Filter actions by severity">
+          <option value="">All severities</option>
+          <option value="High">High priority</option>
+          <option value="Medium">Medium priority</option>
+          <option value="Low">Low priority</option>
+        </select>
+        <select id="action-status" aria-label="Filter actions by status">
+          <option value="">All statuses</option>
+          <option>Detected — awaiting review</option>
+          <option>Under investigation</option>
+          <option>Confirmed</option>
+          <option>Inconclusive</option>
+          <option>Not substantiated</option>
+          <option>Action in progress</option>
+          <option>Pending verification</option>
+          <option>Resolved</option>
+        </select>
+      </div>
+      <div id="action-list" class="incident-list"></div>
+    </section>
+
+    <!-- Weekly Reports Page -->
+    <section id="reports" class="page">
+      <div class="section-head">
+        <div>
+          <h2>Weekly Regional Brief</h2>
+          <p class="muted">Normalized issue rates per 1,000 feedback records across operating store regions.</p>
+        </div>
+        <a class="primary link-button" href="/api/reports/weekly.csv" download>
+          <span class="btn-icon">⬇</span> Export CSV
+        </a>
+      </div>
+      <div id="report-meta" class="notice">Loading regional report…</div>
+      <div id="report-list" class="report-list"></div>
+      <div id="report-high"></div>
+    </section>
+
+    <!-- Add Feedback / Ingest Modal -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-card">
+        <div class="section-head">
+          <h2 id="modal-title">Add Feedback Record</h2>
+          <button class="quiet" id="close-modal" aria-label="Close modal">✕</button>
+        </div>
+        <form id="feedback-form">
+          <label>
+            Store ID
+            <input name="store_id" required placeholder="e.g. STORE-014">
+          </label>
+          <label>
+            Timestamp (optional, ISO format)
+            <input name="timestamp" placeholder="2026-10-16T10:30:00Z">
+          </label>
+          <label>
+            Channel
+            <select name="channel">
+              <option value="staff_note">Staff Note (POS / Huddle)</option>
+              <option value="online_review">Online Review</option>
+              <option value="in_app">Mobile App Feedback</option>
+              <option value="call_centre">Customer Care / Call Centre</option>
+            </select>
+          </label>
+          <label>
+            Verbatim Feedback Text
+            <textarea name="text" required rows="4" placeholder="Enter or paste the verbatim customer or staff observation…"></textarea>
+          </label>
+          <button class="primary" type="submit">Ingest Feedback</button>
+          <p id="form-message" class="form-feedback muted"></p>
+        </form>
+
+        <hr>
+
+        <div class="import-section">
+          <h3>Batch Import Dataset</h3>
+          <p class="muted">Upload CSV or JSON files. Supported columns: <code>store_id</code>, <code>timestamp</code>, <code>channel</code>, and <code>text</code>.</p>
+          <form id="import-form">
+            <input type="file" name="file" accept=".csv,.json" required>
+            <button class="quiet" type="submit">Upload & Process</button>
+            <p id="import-message" class="form-feedback muted"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail / Problem Statement Modal -->
+    <div id="detail-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <div class="modal-card detail-card">
+        <div class="section-head">
+          <h2 id="detail-title">Problem Statement</h2>
+          <button class="quiet" id="close-detail" aria-label="Close details">✕</button>
+        </div>
+        <div id="detail-content"></div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal for Delete Feedback -->
+    <div id="delete-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+      <div class="modal-card" style="max-width: 480px;">
+        <div class="section-head" style="margin-top: 0;">
+          <h2 id="delete-title">Delete Feedback</h2>
+          <button class="quiet" id="cancel-delete-x" aria-label="Close modal">✕</button>
+        </div>
+        <div style="padding: 10px 0 20px 0;">
+          <p id="delete-modal-msg" style="color: var(--purple-900); font-size: 0.95rem; line-height: 1.5; margin: 0 0 14px 0;">
+            Are you sure you want to delete this feedback? This action cannot be undone.
+          </p>
+          <div id="delete-feedback-preview" style="background: var(--purple-25); border: 1px solid var(--border-line); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 0.88rem; color: var(--text-muted); font-style: italic; max-height: 100px; overflow-y: auto;">
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="quiet" id="cancel-delete-btn" type="button">Cancel</button>
+          <button class="danger-btn" id="confirm-delete-btn" type="button">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}?v=2.3"></script>
+</body>
+</html>

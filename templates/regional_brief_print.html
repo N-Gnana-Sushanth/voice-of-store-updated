@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice of Store — Multi-Region Executive Brief</title>
+  <style>
+    /* Isolated Print Styles - Does NOT modify static/style.css */
+    :root {
+      --deep-purple: #30204F;
+      --primary-purple: #7652C8;
+      --light-purple: #F0EAFE;
+      --bg-lavender: #F8F6FC;
+      --card-white: #FFFFFF;
+      --dark-text: #292438;
+      --muted-text: #777187;
+      --border-color: #E6E0F2;
+      --critical: #D9364F;
+      --high: #E87835;
+      --medium: #D6A52D;
+      --low: #31956B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-lavender);
+      color: var(--dark-text);
+      line-height: 1.5;
+      padding: 32px 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .no-print-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-white);
+      padding: 12px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(48, 32, 79, 0.06);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary-purple);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #6341B4;
+    }
+
+    .btn-secondary {
+      background: var(--light-purple);
+      color: var(--primary-purple);
+    }
+    .btn-secondary:hover {
+      background: #E5DAFD;
+    }
+
+    .report-sheet {
+      background: var(--card-white);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(48, 32, 79, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .header {
+      border-bottom: 2px solid var(--light-purple);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .logo-title h1 {
+      font-size: 24px;
+      color: var(--deep-purple);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-title p {
+      font-size: 14px;
+      color: var(--muted-text);
+      margin-top: 4px;
+    }
+
+    .period-meta {
+      text-align: right;
+      font-size: 13px;
+      color: var(--muted-text);
+    }
+
+    .period-meta strong {
+      color: var(--deep-purple);
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .kpi-card {
+      background: var(--bg-lavender);
+      border-radius: 12px;
+      padding: 16px 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .kpi-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted-text);
+    }
+
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--deep-purple);
+      margin-top: 4px;
+    }
+
+    .kpi-sub {
+      font-size: 12px;
+      color: var(--muted-text);
+      margin-top: 2px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--deep-purple);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 32px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--bg-lavender);
+      color: var(--deep-purple);
+      font-weight: 600;
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .region-name {
+      font-weight: 700;
+      color: var(--deep-purple);
+      font-size: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .badge-critical { background: #FDE8EB; color: var(--critical); }
+    .badge-high { background: #FEF0E8; color: var(--high); }
+    .badge-medium { background: #FEF8E8; color: var(--medium); }
+    .badge-low { background: #EAF7F1; color: var(--low); }
+
+    .trend-up { color: var(--critical); font-weight: 700; }
+    .trend-down { color: var(--low); font-weight: 700; }
+    .trend-stable { color: var(--muted-text); font-weight: 600; }
+
+    .issue-pill {
+      display: inline-block;
+      background: var(--bg-lavender);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin: 2px 0;
+      color: var(--dark-text);
+    }
+
+    .alert-tag {
+      font-size: 11px;
+      color: var(--muted-text);
+      display: block;
+      margin-top: 4px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted-text);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .no-print-toolbar {
+        display: none !important;
+      }
+      .report-sheet {
+        box-shadow: none;
+        border: none;
+        padding: 20px 0;
+      }
+      th {
+        background: #F0EAFE !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .badge, .kpi-card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="no-print-toolbar">
+      <div>
+        <a href="/" class="btn btn-secondary">← Back to Dashboard</a>
+      </div>
+      <div>
+        <button onclick="window.print()" class="btn btn-primary">🖨️ Print / Save PDF</button>
+      </div>
+    </div>
+
+    <div class="report-sheet">
+      <header class="header">
+        <div class="logo-title">
+          <h1>Voice of Store — Multi-Region Executive Brief</h1>
+          <p>Weekly Normalized Incident Rates & Regional Emerging Risk Overview</p>
+        </div>
+        <div class="period-meta">
+          <div>Reporting Window: <strong>{{ brief.period.days }} Days</strong></div>
+          <div>Period: <strong>{{ brief.period.start[:10] }} to {{ brief.period.end[:10] }}</strong></div>
+          <div>Baseline: <strong>Trailing 4-Week Average</strong></div>
+        </div>
+      </header>
+
+      <section class="summary-cards">
+        <div class="kpi-card">
+          <div class="kpi-label">Total Feedback Volume</div>
+          <div class="kpi-value">{{ brief.total_feedback }}</div>
+          <div class="kpi-sub">Across {{ brief.region_count }} reporting regions</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Active Incidents</div>
+          <div class="kpi-value">{{ brief.total_incidents }}</div>
+          <div class="kpi-sub">FIRST SIGNAL detections</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Enterprise Rate / 1,000</div>
+          <div class="kpi-value">
+            {% if brief.total_feedback > 0 %}
+              {{ "%.1f"|format((brief.total_incidents / brief.total_feedback) * 1000) }}
+            {% else %}
+              0.0
+            {% endif %}
+          </div>
+          <div class="kpi-sub">Normalized incident rate</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Regions Monitored</div>
+          <div class="kpi-value">{{ brief.region_count }}</div>
+          <div class="kpi-sub">Store master joined</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Regional Operating Summary</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 22%;">Region</th>
+                <th style="width: 10%;">Feedback</th>
+                <th style="width: 15%;">Incidents by Severity</th>
+                <th style="width: 13%;">Rate / 1,000</th>
+                <th style="width: 22%;">Top Issues & 4-Wk Trend</th>
+                <th style="width: 18%;">Active FIRST SIGNAL Alerts</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for reg in brief.regions %}
+              <tr>
+                <td>
+                  <div class="region-name">{{ reg.region }}</div>
+                  <div class="kpi-sub">{{ reg.active_stores }} active store(s)</div>
+                </td>
+                <td>
+                  <strong>{{ reg.feedback_volume }}</strong>
+                </td>
+                <td>
+                  {% if reg.severity_breakdown.Critical > 0 %}
+                    <span class="badge badge-critical">Crit: {{ reg.severity_breakdown.Critical }}</span>
+                  {% endif %}
+                  {% if reg.severity_breakdown.High > 0 %}
+                    <span class="badge badge-high">High: {{ reg.severity_breakdown.High }}</span>
+                  {% endif %}
+                  {% if reg.severity_breakdown.Medium > 0 %}
+                    <span class="badge badge-medium">Med: {{ reg.severity_breakdown.Medium }}</span>
+                  {% endif %}
+                  {% if reg.severity_breakdown.Low > 0 %}
+                    <span class="badge badge-low">Low: {{ reg.severity_breakdown.Low }}</span>
+                  {% endif %}
+                  {% if reg.incident_count == 0 %}
+                    <span style="color: var(--muted-text); font-size: 12px;">0 incidents</span>
+                  {% endif %}
+                </td>
+                <td>
+                  <strong>{{ reg.normalized_rate_per_k }}</strong>
+                  <div class="kpi-sub">per 1,000 records</div>
+                </td>
+                <td>
+                  {% for iss in reg.top_issues %}
+                    <div>
+                      <span class="issue-pill">{{ iss.issue_type.replace('_', ' ') }}</span>
+                      <strong>{{ iss.count }}</strong>
+                      {% if iss.trend == "↑" %}
+                        <span class="trend-up">↑ {{ iss.trend_label }}</span>
+                      {% elif iss.trend == "↓" %}
+                        <span class="trend-down">↓ {{ iss.trend_label }}</span>
+                      {% else %}
+                        <span class="trend-stable">→ {{ iss.trend_label }}</span>
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <span style="color: var(--muted-text); font-size: 12px;">No complaints recorded</span>
+                  {% endfor %}
+                </td>
+                <td>
+                  {% for al in reg.alerts %}
+                    <div class="alert-tag">
+                      <strong>{{ al.id }}</strong>: {{ al.summary }}
+                    </div>
+                  {% else %}
+                    <span style="color: var(--low); font-size: 12px;">✓ No active alerts</span>
+                  {% endfor %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>Voice of Store Engine — Continuous Early-Warning Architecture</div>
+        <div>Generated: {{ brief.generated_at[:19].replace('T', ' ') }} UTC</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
